@@ -3,18 +3,30 @@ export class BikeIndex{
     this.zipcode = zipcode;
   }
 
+   filterBikeData (resultBikes){
+    let bikeArray = [];
+    resultBikes.bikes.forEach(function(bike){
+        bikeArray.push({
+          "title" : bike.title,
+          "serial" : bike.serial,
+          "year": bike.year,
+          "stolen_location": bike.stolen_location,
+          "date_stolen": bike.date_stolen
+        });
+    });
+    return bikeArray;
+  }
+
   getBikes(displayData){
     console.log("getBikes"+this.zipcode);
     let results;
-    // let url = `https://bikeindex.org:443/api/v3/search?page=1&per_page=25&location=${this.zipcode}&distance=10&stolenness=stolen`;
-    // let url = "https://bikeindex.org:443/api/v3/bikes/361593";
-    let url = "https://bikeindex.org:443/api/v3/search?page=1&per_page=25&location=97211&distance=10&stolenness=proximity";
+    let url = `https://bikeindex.org:443/api/v3/search?location=${this.zipcode}&distance=10&stolenness=proximity`;
     $.get(url)
-      .then(function(results){
-        // console.log("bike results found"+results.bikes.id);
-      displayData(results);
+      .then( (results) => {
+      let ourList = this.filterBikeData(results);
+      displayData(ourList);
     })
-      .fail(function(){
+      .fail( () => {
         console.log("something went wrong");
       });
     }

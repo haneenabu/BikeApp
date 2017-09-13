@@ -1,0 +1,22 @@
+html{
+  position: relative;
+  min-height: 100%;
+}
+body{
+  background-image: url(bike.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: cursive;
+}
+.jumbotron{
+  text-align: center;
+  font-weight: bolder;
+  background-color: inherit;
+}
+.bikes {
+  cursor: pointer;
+  color: blue;
+}
+#inputForm{
+
+}
