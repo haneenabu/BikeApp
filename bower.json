@@ -1,9 +1,8 @@
 {
   "name": "bikeindex",
   "description": "",
-  "main": "*-interface.js",
-  "authors": [
-  ],
+  "main": "bikeindex-interface.js",
+  "authors": [],
   "license": "ISC",
   "homepage": "",
   "ignore": [
@@ -16,6 +15,7 @@
   "dependencies": {
     "jquery": "^3.2.1",
     "bootstrap": "^3.3.7",
-    "moment": "^2.18.1"
+    "moment": "^2.18.1",
+    "chart.js": "^2.7.0"
   }
 }

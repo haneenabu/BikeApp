@@ -34,6 +34,7 @@
     "watchify": "^3.9.0"
   },
   "dependencies": {
+    "chart.js": "^2.7.0",
     "moment": "^2.18.1"
   }
 }
