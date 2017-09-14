@@ -6,7 +6,7 @@ body{
   background-image: url(bike.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  font-family: cursive;
+  /*font-family: cursive;*/
 }
 .jumbotron{
   text-align: center;

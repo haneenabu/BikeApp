@@ -1,4 +1,5 @@
 export class BikeIndex{
+
   constructor(zipcode){
     this.zipcode = zipcode;
   }
@@ -18,16 +19,17 @@ export class BikeIndex{
   }
 
   getBikes(displayData){
-    console.log("getBikes"+this.zipcode);
+    let filteredBikes;
     let results;
     let url = `https://bikeindex.org:443/api/v3/search?location=${this.zipcode}&distance=10&stolenness=proximity`;
     $.get(url)
       .then( (results) => {
-      let ourList = this.filterBikeData(results);
-      displayData(ourList);
+      filteredBikes = this.filterBikeData(results);
+      displayData(filteredBikes);
     })
       .fail( () => {
         console.log("something went wrong");
+        filteredBikes = [];
       });
     }
 }
